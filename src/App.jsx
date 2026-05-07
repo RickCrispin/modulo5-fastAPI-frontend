@@ -79,22 +79,38 @@ function App() {
 
       <h2>Resultado de la Simulación</h2>
 
-      <div className="result-grid">
-        <div className="result-item">
+      {/* Sección Principal - Items grandes */}
+      <div className="result-grid-main">
+        <div className="result-item result-item-main">
           <div className="label">Monto Solicitado</div>
           <div className="value">S/ {resultado.data.monto}</div>
         </div>
 
-        <div className="result-item">
+        <div className="result-item result-item-main">
           <div className="label">Cuota Mensual</div>
           <div className="value">S/ {resultado.data.cuota_mensual}</div>
         </div>
 
-        <div className="result-item">
+        <div className="result-item result-item-main">
           <div className="label">Total Intereses</div>
           <div className="value">S/ {resultado.data.total_intereses}</div>
         </div>
 
+        <div className="result-item result-item-main">
+          <div className="label">Total a Pagar</div>
+          <div className="value">S/ {resultado.data.total_a_pagar}</div>
+        </div>
+
+        <div className="result-item result-item-main">
+          <div className="label">Plazo en Meses</div>
+          <div className="value">{resultado.data.plazo_meses}</div>
+        </div>
+      </div>
+
+      {/* Sección Secundaria - Detalles adicionales */}
+      {/* MEJORA APLICADA */}
+      <div className="result-details-label">Detalles Adicionales</div>
+      <div className="result-grid-secondary">
         <div className="result-item">
           <div className="label">ITF</div>
           <div className="value">S/ {resultado.data.itf}</div>
@@ -104,17 +120,7 @@ function App() {
           <div className="label">Importe a Recibir</div>
           <div className="value">S/ {resultado.data.importe_a_recibir}</div>
         </div>
-
-        <div className="result-item">
-          <div className="label">Total a Pagar</div>
-          <div className="value">S/ {resultado.data.total_a_pagar}</div>
-        </div>
-
-        <div className="result-item">
-          <div className="label">Plazo en Meses</div>
-          <div className="value">{resultado.data.plazo_meses}</div>
-        </div>
-
+      {/* ************************************** */}
         <div className="result-item">
           <div className="label">Tasa Anual (%)</div>
           <div className="value">{resultado.data.tasa_anual}%</div>

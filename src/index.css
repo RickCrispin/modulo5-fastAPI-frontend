@@ -68,11 +68,22 @@ body {
   padding: 14px 16px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.08);
+  background: rgba(20, 40, 60, 0.9);
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s ease;
   outline: none;
+}
+
+.input-group select {
+  cursor: pointer;
+  accent-color: #38bdf8;
+}
+
+.input-group select option {
+  background: #1a2a3a;
+  color: #fff;
+  padding: 8px;
 }
 
 .input-group input:focus,
@@ -195,6 +206,43 @@ body {
   }
 }
 
+/* Grid Principal - Items destacados */
+.result-grid-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* Grid Secundario - Detalles adicionales */
+.result-details-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.result-grid-secondary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .result-grid-secondary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .result-grid-secondary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .result-item {
   background: rgba(255,255,255,0.05);
   border-radius: 18px;
@@ -232,6 +280,35 @@ body {
   font-size: 1.2rem;
   font-weight: 700;
   color: #38bdf8;
+}
+
+/* Item Principal - Más prominent */
+.result-item-main {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 24px;
+}
+
+.result-item-main::before {
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8, #2563eb, #1e40af);
+}
+
+.result-item-main:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-8px);
+}
+
+.result-item-main .label {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.result-item-main .value {
+  font-size: 1.6rem;
+  margin-top: 8px;
 }
 
 /* Animaciones */
